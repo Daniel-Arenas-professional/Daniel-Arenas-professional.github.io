@@ -71,7 +71,7 @@ nav a:hover {
 }
 
 .nav-menu {
-  display: flex !important;
+  display: flex;
 }
 
 @media (max-width: 768px) {
@@ -80,7 +80,7 @@ nav a:hover {
   }
 
   .nav-menu {
-    display: none;
+    display: none !important;
     position: absolute;
     top: 70px;
     left: 0;
@@ -96,7 +96,7 @@ nav a:hover {
   }
 
   .nav-menu.active {
-    display: flex;
+    display: flex !important;
   }
 
   .nav-menu li {
