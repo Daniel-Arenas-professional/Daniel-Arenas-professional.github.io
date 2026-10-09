@@ -3,3 +3,6 @@
 *.swo
 *~
 .vscode/
+
+# Documentos de trabajo (no se publican)
+BRIEFING-REDISEÑO.md

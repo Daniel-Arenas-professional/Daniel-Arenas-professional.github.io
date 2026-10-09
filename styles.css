@@ -82,7 +82,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: clamp(2.9rem, 1.2rem + 7vw, 7rem);
+  font-size: clamp(2.9rem, 1rem + 6.2vw, 6.5rem);
   line-height: 0.98;
 }
 
@@ -146,6 +146,14 @@ ul {
   border: 0;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
+.h1-line {
+  display: block;
+}
+
 .skip-link {
   position: absolute;
   top: -100px;
@@ -199,6 +207,32 @@ ul {
   border: var(--border);
   border-radius: var(--radius);
   font-size: 0.72rem;
+}
+
+/* Etiquetas de lista: competencias y herramientas */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  padding: 0.4rem 0.7rem;
+  background: var(--papel);
+  border: var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.chips-small .chip {
+  padding: 0.25rem 0.55rem;
+  background: var(--crema);
+  font-size: 0.7rem;
 }
 
 /* Subrayado tipo rotulador: una palabra por titular */
@@ -515,7 +549,7 @@ a.card:hover {
 }
 
 .hero h1 {
-  max-width: 13ch;
+  max-width: none;
   margin-bottom: clamp(2rem, 4vw, 3.5rem);
 }
 
@@ -539,23 +573,7 @@ a.card:hover {
   text-transform: uppercase;
   letter-spacing: -0.01em;
   line-height: 1.15;
-  margin-bottom: 0.75rem;
-}
-
-.hero-rotator {
-  font-weight: 600;
-  margin-bottom: 1.25rem;
-}
-
-.rotating-word {
-  display: inline-block;
-  border-bottom: 2px solid var(--tinta);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.rotating-word.swap {
-  opacity: 0;
-  transform: translateY(4px);
+  margin-bottom: 1rem;
 }
 
 .hero-desc {
@@ -851,6 +869,14 @@ a.card:hover {
   rotate: -1deg;
 }
 
+.competencias {
+  margin-top: 2.5rem;
+}
+
+.competencias .label {
+  margin-bottom: 0.9rem;
+}
+
 .about-content .about-highlight::before {
   content: '✳ ';
   color: var(--tomate);
@@ -1021,7 +1047,6 @@ a.card:hover {
 .numbered {
   display: grid;
   gap: 0;
-  margin-bottom: clamp(4rem, 8vw, 6rem);
 }
 
 @media (min-width: 900px) {
@@ -1066,54 +1091,6 @@ a.card:hover {
   padding: 0.15rem 0.5rem;
 }
 
-.capacities .label {
-  margin-bottom: 0.5rem;
-}
-
-.capacities-title {
-  font-size: clamp(1.6rem, 1.2rem + 2vw, 2.6rem);
-  font-weight: 800;
-  margin-bottom: 2rem;
-}
-
-.cap-list {
-  display: grid;
-  gap: 0 3rem;
-}
-
-@media (min-width: 768px) {
-  .cap-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.cap-list li {
-  display: grid;
-  grid-template-columns: 3.5rem 1fr;
-  column-gap: 1rem;
-  padding-block: 1.5rem;
-  border-top: 2px solid var(--linea);
-}
-
-.cap-num {
-  grid-row: span 2;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 2.2rem;
-  line-height: 0.9;
-  letter-spacing: -0.04em;
-  color: var(--tomate);
-}
-
-.cap-list h4 {
-  margin-bottom: 0.4rem;
-}
-
-.cap-list p {
-  color: var(--tinta-suave);
-  font-size: 1.05rem;
-}
-
 /* ==========================================================================
    Experiencia
    ========================================================================== */
@@ -1142,8 +1119,9 @@ a.card:hover {
 
 .exp-top {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
   margin-bottom: 1.25rem;
 }
@@ -1175,102 +1153,115 @@ a.card:hover {
   margin-bottom: 1rem;
 }
 
-.job-description {
-  max-width: 65ch;
-  margin-bottom: 1.25rem;
-}
-
 .exp-link {
-  display: inline-block;
-  border-bottom: var(--border);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  flex-shrink: 0;
+  text-decoration: none;
+  color: var(--tinta);
 }
 
-a.exp-card:hover .exp-link {
-  border-bottom-color: var(--tomate);
+.exp-link:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--tomate);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.arrow-list {
+  display: grid;
+  gap: 0.55rem;
+  max-width: 68ch;
+  margin-bottom: 1.5rem;
+}
+
+.arrow-list li {
+  position: relative;
+  padding-left: 1.6em;
+}
+
+.arrow-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  font-weight: 600;
 }
 
 /* ==========================================================================
-   Habilidades
+   Herramientas
    ========================================================================== */
 
-.skills-sheet {
-  display: grid;
-  background: var(--papel);
+.tools-sheet {
+  background: var(--crema);
   border: var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
 
-@media (min-width: 900px) {
-  .skills-sheet {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.skill-category {
-  padding: clamp(1.25rem, 3vw, 2rem);
-}
-
-.skill-category + .skill-category {
-  border-top: 2px dashed var(--linea);
+.tools {
+  display: grid;
 }
 
 @media (min-width: 900px) {
-  .skill-category + .skill-category {
-    border-top: 0;
-    border-left: 2px dashed var(--linea);
+  .tools {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tool:nth-child(odd) {
+    border-right: 2px dashed var(--linea);
   }
 }
 
-.skill-category h3 {
-  margin-bottom: 1.5rem;
-}
-
-.skill-list {
+.tool {
   display: grid;
-  gap: 1.25rem;
+  gap: 0.75rem;
+  padding: 1.5rem clamp(1.25rem, 3vw, 2rem);
+  border-bottom: 2px dashed var(--linea);
 }
 
-.skill {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 0.4rem 1rem;
-  align-items: baseline;
+@media (min-width: 600px) {
+  .tool {
+    grid-template-columns: 7.5rem 1fr;
+    gap: 1.25rem;
+    align-items: start;
+  }
 }
 
-.skill-name {
-  font-weight: 600;
-  font-size: 1rem;
+.tool dt {
+  justify-self: start;
 }
 
-.skill-pct {
+.tool dd {
+  font-size: 1.05rem;
+}
+
+.langs {
+  padding: 1.5rem clamp(1.25rem, 3vw, 2rem) 1.75rem;
+}
+
+.langs h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.lang-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 3rem;
+}
+
+.lang-list dt {
   font-family: var(--font-mono);
   font-weight: 500;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
 }
 
-.skill-bar {
-  grid-column: 1 / -1;
-  display: block;
-  height: 16px;
-  background: var(--crema);
-  border: var(--border);
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-.skill-bar span {
-  display: block;
-  height: 100%;
-  width: var(--p, 0%);
-  background: var(--tomate);
-  border-right: var(--border);
-  transform-origin: left;
-  transition: transform 0.9s var(--ease) 0.2s;
-}
-
-.js .skills-sheet:not(.is-visible) .skill-bar span {
-  transform: scaleX(0);
+.lang-list dd {
+  font-weight: 600;
 }
 
 /* ==========================================================================
@@ -1367,10 +1358,6 @@ a.exp-card:hover .exp-link {
 
   .js [data-reveal] {
     opacity: 1;
-    transform: none;
-  }
-
-  .js .skills-sheet:not(.is-visible) .skill-bar span {
     transform: none;
   }
 

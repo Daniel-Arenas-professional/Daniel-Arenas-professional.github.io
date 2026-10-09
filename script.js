@@ -86,6 +86,7 @@
   /* ------------------------------------------------------------------ */
   function animateCount(el) {
     const target = parseInt(el.getAttribute('data-count'), 10) || 0;
+    const prefix = el.getAttribute('data-prefix') || '';
     const suffix = el.getAttribute('data-suffix') || '';
     const duration = 1100;
     const start = performance.now();
@@ -93,10 +94,10 @@
     function tick(now) {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.round(eased * target) + suffix;
+      el.textContent = prefix + Math.round(eased * target) + suffix;
       if (progress < 1) requestAnimationFrame(tick);
     }
-    el.textContent = '0' + suffix;
+    el.textContent = prefix + '0' + suffix;
     requestAnimationFrame(tick);
   }
 
@@ -114,24 +115,6 @@
     document.querySelectorAll('.stat-item').forEach(function (item) {
       statObserver.observe(item);
     });
-  }
-
-  /* ------------------------------------------------------------------ */
-  /* Palabras rotativas del hero                                         */
-  /* ------------------------------------------------------------------ */
-  const rotatingWord = document.getElementById('rotatingWord');
-  const words = ['redes de distribución', 'flotas y rutas', 'cadenas de suministro', 'procesos con datos'];
-  let wordIndex = 0;
-
-  if (rotatingWord && !reduceMotion) {
-    setInterval(function () {
-      rotatingWord.classList.add('swap');
-      setTimeout(function () {
-        wordIndex = (wordIndex + 1) % words.length;
-        rotatingWord.textContent = words[wordIndex];
-        rotatingWord.classList.remove('swap');
-      }, 250);
-    }, 2600);
   }
 
   /* ------------------------------------------------------------------ */
@@ -162,16 +145,16 @@
   const projects = [
     {
       id: 0,
-      title: 'Charla de Orientación al alumnado',
-      description: 'Gracias a mi amplia experiencia en el ámbito de la formación profesional, tanto en clase como en empresas, ayudo a alumnos de la ESO a encontrar su motivación y su camino laboral para que les sea más fácil el cambio a estudios superiores. En esta charla comparto mi experiencia personal, consejos y recursos para que los estudiantes puedan tomar las mejores decisiones y no tengan miedo a equivocarse.',
+      title: 'Charla de orientación al alumnado',
+      description: 'Ayudé a alumnos de la ESO a encontrar su motivación y su camino laboral, compartiendo mi experiencia, consejos y recursos.',
       image: 'assets/charla-fp.jpg',
       alt: 'Portada de la presentación «Orientación a la FP», con ilustraciones de estudiantes leyendo sobre libros',
-      tags: ['Comunicación', 'Desarrollo personal', 'Motivación']
+      tags: ['Desarrollo personal', 'Motivación']
     },
     {
       id: 1,
       title: 'Ágora, un espacio ecológico',
-      description: 'Idea de empresa que hice junto a mi grupo en una clase de emprendimiento que tuvo lugar en la Universidad de Marketing y Gestión de Málaga, impartida por Diverxia. Gracias al trabajo que hicimos ese día conseguimos ganar el segundo premio del concurso de ideas de negocio, y el premio a la mejor presentación.',
+      description: 'Idea de empresa desarrollada en una formación de emprendimiento impartida por Diverxia.',
       image: 'assets/agora.jpg',
       alt: 'Portada del proyecto Ágora S.L., supermercado ecológico, con ilustraciones de personas comprando productos frescos',
       tags: ['Sostenibilidad', 'Emprendimiento', 'Creatividad']
