@@ -12,11 +12,13 @@
   function closeMenu() {
     navMenu.classList.remove('active');
     menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Abrir menú');
   }
 
   menuToggle.addEventListener('click', function () {
     const isOpen = navMenu.classList.toggle('active');
     menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
   });
 
   document.querySelectorAll('.nav-link').forEach(function (link) {
@@ -31,14 +33,21 @@
     }
   });
 
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+      closeMenu();
+      menuToggle.focus();
+    }
+  });
+
   /* ------------------------------------------------------------------ */
-  /* Header sticky con blur al hacer scroll                             */
+  /* Header: borde al hacer scroll                                       */
   /* ------------------------------------------------------------------ */
   const header = document.getElementById('siteHeader');
   let ticking = false;
 
   function updateHeader() {
-    header.classList.toggle('scrolled', window.scrollY > 40);
+    header.classList.toggle('scrolled', window.scrollY > 10);
     ticking = false;
   }
 
@@ -47,65 +56,65 @@
       requestAnimationFrame(updateHeader);
       ticking = true;
     }
-  });
+  }, { passive: true });
   updateHeader();
 
   /* ------------------------------------------------------------------ */
-  /* Reveal on scroll                                                    */
+  /* Aparición suave                                                     */
   /* ------------------------------------------------------------------ */
   const revealItems = document.querySelectorAll('[data-reveal]');
-  const revealObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
 
-  revealItems.forEach(function (item) {
-    revealObserver.observe(item);
-  });
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    revealItems.forEach(function (item) { item.classList.add('is-visible'); });
+  } else {
+    const revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+    revealItems.forEach(function (item) {
+      revealObserver.observe(item);
+    });
+  }
 
   /* ------------------------------------------------------------------ */
-  /* Contadores animados                                                 */
+  /* Contadores (el valor final ya está en el HTML)                      */
   /* ------------------------------------------------------------------ */
   function animateCount(el) {
     const target = parseInt(el.getAttribute('data-count'), 10) || 0;
     const suffix = el.getAttribute('data-suffix') || '';
-
-    if (reduceMotion) {
-      el.textContent = target + suffix;
-      return;
-    }
-
-    const duration = 1200;
+    const duration = 1100;
     const start = performance.now();
 
     function tick(now) {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
       el.textContent = Math.round(eased * target) + suffix;
-      if (progress < 1) {
-        requestAnimationFrame(tick);
-      }
+      if (progress < 1) requestAnimationFrame(tick);
     }
+    el.textContent = '0' + suffix;
     requestAnimationFrame(tick);
   }
 
-  const statObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        const numberEl = entry.target.querySelector('.stat-number');
-        if (numberEl) animateCount(numberEl);
-        statObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.4 });
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const statObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const numberEl = entry.target.querySelector('.stat-number');
+          if (numberEl) animateCount(numberEl);
+          statObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
 
-  document.querySelectorAll('.stat-item').forEach(function (item) {
-    statObserver.observe(item);
-  });
+    document.querySelectorAll('.stat-item').forEach(function (item) {
+      statObserver.observe(item);
+    });
+  }
 
   /* ------------------------------------------------------------------ */
   /* Palabras rotativas del hero                                         */
@@ -123,87 +132,6 @@
         rotatingWord.classList.remove('swap');
       }, 250);
     }, 2600);
-  }
-
-  /* ------------------------------------------------------------------ */
-  /* Timeline                                                             */
-  /* ------------------------------------------------------------------ */
-  const timelineObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        timelineObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  document.querySelectorAll('.timeline-item').forEach(function (item) {
-    timelineObserver.observe(item);
-  });
-
-  /* ------------------------------------------------------------------ */
-  /* Anillos de habilidades                                              */
-  /* ------------------------------------------------------------------ */
-  const RING_CIRCUMFERENCE = 326.7;
-
-  function animateRing(ring) {
-    const percent = parseInt(ring.getAttribute('data-percent'), 10) || 0;
-    const fillCircle = ring.querySelector('.ring-fill');
-    const percentLabel = ring.querySelector('.ring-percent');
-    const offset = RING_CIRCUMFERENCE * (1 - percent / 100);
-
-    if (fillCircle) {
-      fillCircle.style.strokeDashoffset = reduceMotion ? offset : RING_CIRCUMFERENCE;
-      requestAnimationFrame(function () {
-        fillCircle.style.strokeDashoffset = offset;
-      });
-    }
-
-    if (percentLabel) {
-      if (reduceMotion) {
-        percentLabel.textContent = percent + '%';
-      } else {
-        const duration = 1200;
-        const start = performance.now();
-        (function tick(now) {
-          const progress = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          percentLabel.textContent = Math.round(eased * percent) + '%';
-          if (progress < 1) requestAnimationFrame(tick);
-        })(start);
-      }
-    }
-  }
-
-  const ringObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        animateRing(entry.target);
-        ringObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.4 });
-
-  document.querySelectorAll('.skill-ring').forEach(function (ring) {
-    ringObserver.observe(ring);
-  });
-
-  /* ------------------------------------------------------------------ */
-  /* Botones magnéticos                                                  */
-  /* ------------------------------------------------------------------ */
-  if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
-    document.querySelectorAll('.magnetic').forEach(function (btn) {
-      btn.addEventListener('mousemove', function (e) {
-        const rect = btn.getBoundingClientRect();
-        const relX = e.clientX - rect.left - rect.width / 2;
-        const relY = e.clientY - rect.top - rect.height / 2;
-        const strength = 0.25;
-        btn.style.transform = 'translate(' + (relX * strength).toFixed(1) + 'px, ' + (relY * strength).toFixed(1) + 'px)';
-      });
-      btn.addEventListener('mouseleave', function () {
-        btn.style.transform = 'translate(0, 0)';
-      });
-    });
   }
 
   /* ------------------------------------------------------------------ */
@@ -236,60 +164,72 @@
       id: 0,
       title: 'Charla de Orientación al alumnado',
       description: 'Gracias a mi amplia experiencia en el ámbito de la formación profesional, tanto en clase como en empresas, ayudo a alumnos de la ESO a encontrar su motivación y su camino laboral para que les sea más fácil el cambio a estudios superiores. En esta charla comparto mi experiencia personal, consejos y recursos para que los estudiantes puedan tomar las mejores decisiones y no tengan miedo a equivocarse.',
-      image: 'assets/Charla FP.png',
+      image: 'assets/charla-fp.jpg',
+      alt: 'Portada de la presentación «Orientación a la FP», con ilustraciones de estudiantes leyendo sobre libros',
       tags: ['Comunicación', 'Desarrollo personal', 'Motivación']
     },
     {
       id: 1,
       title: 'Ágora, un espacio ecológico',
       description: 'Idea de empresa que hice junto a mi grupo en una clase de emprendimiento que tuvo lugar en la Universidad de Marketing y Gestión de Málaga, impartida por Diverxia. Gracias al trabajo que hicimos ese día conseguimos ganar el segundo premio del concurso de ideas de negocio, y el premio a la mejor presentación.',
-      image: 'assets/Agora.png',
+      image: 'assets/agora.jpg',
+      alt: 'Portada del proyecto Ágora S.L., supermercado ecológico, con ilustraciones de personas comprando productos frescos',
       tags: ['Sostenibilidad', 'Emprendimiento', 'Creatividad']
     }
   ];
 
+  const modal = document.getElementById('projectModal');
+
   window.openModal = function (index) {
     const project = projects[index];
     if (!project) return;
-    const modal = document.getElementById('projectModal');
 
-    document.getElementById('modalImage').src = project.image;
-    document.getElementById('modalImage').alt = project.title;
+    const image = document.getElementById('modalImage');
+    image.src = project.image;
+    image.alt = project.alt;
     document.getElementById('modalTitle').textContent = project.title;
     document.getElementById('modalDescription').textContent = project.description;
 
     const tagsContainer = document.getElementById('modalTags');
-    tagsContainer.innerHTML = project.tags.map(function (tag) {
-      return '<span class="modal-tag">' + tag + '</span>';
-    }).join('');
+    tagsContainer.textContent = '';
+    project.tags.forEach(function (tag) {
+      const span = document.createElement('span');
+      span.className = 'modal-tag';
+      span.textContent = tag;
+      tagsContainer.appendChild(span);
+    });
 
-    modal.classList.add('active');
+    if (typeof modal.showModal === 'function') {
+      modal.showModal();
+    } else {
+      modal.setAttribute('open', '');
+    }
     document.body.style.overflow = 'hidden';
   };
 
   window.closeModal = function () {
-    const modal = document.getElementById('projectModal');
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
+    if (typeof modal.close === 'function') {
+      modal.close();
+    } else {
+      modal.removeAttribute('open');
+    }
+    document.body.style.overflow = '';
   };
 
-  document.addEventListener('DOMContentLoaded', function () {
-    const modal = document.getElementById('projectModal');
-    modal.addEventListener('click', function (e) {
-      if (e.target === modal) closeModal();
-    });
+  modal.addEventListener('close', function () {
+    document.body.style.overflow = '';
+  });
 
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeModal();
-    });
+  // Cerrar al pulsar fuera de la hoja
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) window.closeModal();
+  });
 
-    document.querySelectorAll('.bento-card').forEach(function (card) {
-      card.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          card.click();
-        }
-      });
+  modal.querySelector('.modal-close').addEventListener('click', window.closeModal);
+
+  document.querySelectorAll('.project-open').forEach(function (button) {
+    button.addEventListener('click', function () {
+      window.openModal(parseInt(button.getAttribute('data-project'), 10));
     });
   });
 })();

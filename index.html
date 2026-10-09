@@ -5,19 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daniel Arenas Barrios · Logística, Transporte &amp; Comunicación</title>
   <meta name="description" content="Portfolio de Daniel Arenas Barrios, técnico en Logística y Transporte con formación en Gestión Administrativa y una fuerte capacidad de comunicación y presentación.">
-  <meta name="theme-color" content="#0b0f1a">
+  <meta name="theme-color" content="#F3ECE0">
+  <meta name="color-scheme" content="light">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=IBM+Plex+Mono:wght@500&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
   <!-- Header -->
-  <header id="siteHeader">
-    <nav>
-      <a href="#home" class="logo">✦ Daniel Arenas</a>
+  <header id="siteHeader" class="site-header">
+    <nav class="wrap nav" aria-label="Principal">
+      <a href="#home" class="logo">Daniel Arenas <span class="star" aria-hidden="true">✳</span></a>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
       </button>
@@ -32,389 +36,371 @@
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="hero-bg" aria-hidden="true">
-      <div class="blob blob-1"></div>
-      <div class="blob blob-2"></div>
-    </div>
+  <main id="main">
 
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="hero-eyebrow" data-reveal>Portfolio profesional</p>
-        <h1 data-reveal>Daniel Arenas <span class="text-gradient">Barrios</span></h1>
-        <p class="hero-role" data-reveal>Técnico en Logística y Administración</p>
-        <p class="hero-rotator" data-reveal>
-          Optimizando <span id="rotatingWord" class="rotating-word">redes de distribución</span>
-        </p>
-        <p class="hero-desc" data-reveal>
-          Aprendiendo a optimizar redes de distribución, analizar datos operacionales y automatizar procesos logísticos para maximizar la eficiencia — y con la capacidad de comunicar cada idea con claridad.
-        </p>
-        <div class="hero-actions" data-reveal>
-          <a href="https://www.linkedin.com/in/daniel-arenas-barrios" target="_blank" rel="noopener" class="btn btn-primary magnetic">Ver mi LinkedIn</a>
-          <a href="#contacto" class="btn btn-ghost magnetic">Contactar</a>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="wrap">
+        <p class="label" data-reveal><span class="star" aria-hidden="true">✳</span> Daniel Arenas Barrios — Portfolio</p>
+        <h1 data-reveal>Sé de logística. Y sé <span class="marker">contarla</span>.</h1>
+
+        <div class="hero-grid">
+          <div class="hero-text">
+            <p class="hero-role" data-reveal>Técnico en Logística y Administración</p>
+            <p class="hero-rotator" data-reveal>
+              Optimizando <span id="rotatingWord" class="rotating-word">redes de distribución</span>
+            </p>
+            <p class="hero-desc" data-reveal>
+              Aprendiendo a optimizar redes de distribución, analizar datos operacionales y automatizar procesos logísticos para maximizar la eficiencia — y con la capacidad de comunicar cada idea con claridad.
+            </p>
+            <div class="hero-actions" data-reveal>
+              <a href="#contacto" class="btn btn-primary">Hablemos</a>
+              <a href="https://www.linkedin.com/in/daniel-arenas-barrios" target="_blank" rel="noopener" class="btn btn-secondary">Ver mi LinkedIn<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a>
+            </div>
+          </div>
+
+          <div class="hero-visual" data-reveal>
+            <div class="albaran">
+              <div class="albaran-head">
+                <span class="label">Albarán de entrega</span>
+                <span class="label">Nº 001</span>
+              </div>
+              <dl class="albaran-list">
+                <div><dt>Remitente</dt><dd>Daniel Arenas Barrios</dd></div>
+                <div><dt>Contenido</dt><dd>Logística, administración y facilidad de palabra</dd></div>
+                <div><dt>Entregado</dt><dd>Gestión Administrativa · 2023 - 2025</dd></div>
+                <div><dt>En tránsito</dt><dd>Transporte y Logística · 2025 - 2027</dd></div>
+                <div><dt>Destino</dt><dd>Tu equipo</dd></div>
+              </dl>
+              <div class="albaran-foot">
+                <span class="barcode" aria-hidden="true"></span>
+                <span class="label">Manipular sin miedo</span>
+              </div>
+              <span class="sticker sticker-1">✳ 2 premios</span>
+              <span class="sticker sticker-2">→ Ponente</span>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="hero-visual" data-reveal>
-        <div class="hero-visual-glow" aria-hidden="true"></div>
-        <svg class="hero-illustration" viewBox="0 0 400 460" role="img" aria-label="Ilustración de un profesional con traje y los brazos cruzados, imagen provisional a la espera de una foto personal">
-          <defs>
-            <linearGradient id="suitGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#243147"/>
-              <stop offset="100%" stop-color="#0c1526"/>
-            </linearGradient>
-            <linearGradient id="suitLight" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#3a4a68"/>
-              <stop offset="100%" stop-color="#202c42"/>
-            </linearGradient>
-            <linearGradient id="headGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#38bdf8"/>
-              <stop offset="100%" stop-color="#ff7a59"/>
-            </linearGradient>
-            <radialGradient id="glowGrad" cx="50%" cy="42%" r="55%">
-              <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35"/>
-              <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-
-          <circle cx="205" cy="200" r="195" fill="url(#glowGrad)"/>
-          <ellipse cx="205" cy="432" rx="118" ry="14" fill="#000000" opacity="0.28"/>
-
-          <!-- torso, ligeramente girado -->
-          <path d="M100,430 L100,292 Q102,252 150,240 L268,228 Q315,248 313,292 L313,430 Z" fill="url(#suitGrad)"/>
-
-          <!-- solapas -->
-          <path d="M176,244 L204,320 L192,246 Z" fill="url(#suitLight)"/>
-          <path d="M240,236 L214,318 L228,238 Z" fill="url(#suitLight)"/>
-
-          <!-- camisa / cuello -->
-          <path d="M190,248 L206,282 L222,244 L206,262 Z" fill="#eef2f6"/>
-          <!-- corbata -->
-          <rect x="200" y="260" width="12" height="66" rx="4" fill="#ff7a59"/>
-
-          <!-- brazos cruzados -->
-          <rect x="138" y="304" width="150" height="32" rx="16" fill="url(#suitLight)" transform="rotate(-9 213 320)"/>
-          <rect x="126" y="332" width="150" height="32" rx="16" fill="url(#suitGrad)" transform="rotate(8 201 348)"/>
-          <!-- puños -->
-          <rect x="128" y="300" width="26" height="32" rx="10" fill="#eef2f6" transform="rotate(-9 141 316)"/>
-          <rect x="270" y="330" width="26" height="32" rx="10" fill="#eef2f6" transform="rotate(8 283 346)"/>
-
-          <!-- cuello -->
-          <rect x="188" y="200" width="34" height="40" rx="10" fill="#182236"/>
-
-          <!-- pelo -->
-          <ellipse cx="206" cy="134" rx="72" ry="70" fill="#0c1526"/>
-          <!-- cabeza -->
-          <ellipse cx="206" cy="166" rx="60" ry="64" fill="url(#headGrad)"/>
-          <!-- rasgos mínimos -->
-          <ellipse cx="185" cy="164" rx="5" ry="7" fill="#0c1526" opacity="0.55"/>
-          <ellipse cx="223" cy="162" rx="5" ry="7" fill="#0c1526" opacity="0.55"/>
-        </svg>
-
-        <div class="hero-badge-float hero-badge-1">🏆 2 premios</div>
-        <div class="hero-badge-float hero-badge-2">🎤 Ponente</div>
+    <!-- Banda 1 -->
+    <div class="ticker-wrap" aria-hidden="true">
+      <div class="ticker">
+        <div class="ticker-track">
+          <div class="ticker-group">
+            <span>Logística bien contada ✳ Datos, papeles y buena palabra ✳&nbsp;</span>
+            <span>Logística bien contada ✳ Datos, papeles y buena palabra ✳&nbsp;</span>
+            <span>Logística bien contada ✳ Datos, papeles y buena palabra ✳&nbsp;</span>
+          </div>
+          <div class="ticker-group">
+            <span>Logística bien contada ✳ Datos, papeles y buena palabra ✳&nbsp;</span>
+            <span>Logística bien contada ✳ Datos, papeles y buena palabra ✳&nbsp;</span>
+            <span>Logística bien contada ✳ Datos, papeles y buena palabra ✳&nbsp;</span>
+          </div>
+        </div>
       </div>
     </div>
 
-    <a href="#stats" class="scroll-indicator" aria-label="Bajar a la siguiente sección">
-      <span></span>
-    </a>
-  </section>
-
-  <!-- Cifras clave -->
-  <section class="stats" id="stats">
-    <div class="stat-item" data-reveal>
-      <span class="stat-number" data-count="3">0</span>
-      <span class="stat-label">Empresas</span>
-    </div>
-    <div class="stat-item" data-reveal data-delay="1">
-      <span class="stat-number" data-count="2">0</span>
-      <span class="stat-label">Titulaciones</span>
-    </div>
-    <div class="stat-item" data-reveal data-delay="2">
-      <span class="stat-number" data-count="2">0</span>
-      <span class="stat-label">Premios en emprendimiento</span>
-    </div>
-    <div class="stat-item" data-reveal data-delay="3">
-      <span class="stat-number" data-count="90" data-suffix="%">0</span>
-      <span class="stat-label">Dominio de Office</span>
-    </div>
-  </section>
-
-  <!-- Sobre mí -->
-  <section id="sobre" class="section">
-    <p class="section-eyebrow" data-reveal>Quién soy</p>
-    <h2 data-reveal>Sobre mí</h2>
-    <div class="about-content">
-      <p data-reveal>
-        Estudiante en formación en Transporte y Logística, además de titulado en Gestión Administrativa, con pasión por la innovación tecnológica aplicada a la cadena de suministro.
-      </p>
-      <p data-reveal>
-        Mi enfoque se centra en estudiar y aplicar los cambios tecnológicos que están transformando la industria desde una perspectiva de eficiencia, sostenibilidad y competitividad.
-      </p>
-      <p class="about-highlight" data-reveal>
-        Combino la precisión técnica de la logística con la capacidad de contar historias y conectar con las personas — algo que he demostrado dando charlas de orientación y ganando premios de presentación pública.
-      </p>
-    </div>
-  </section>
-
-  <!-- Logros y Proyectos -->
-  <section id="logros" class="section">
-    <p class="section-eyebrow" data-reveal>Comunicación y logros</p>
-    <h2 data-reveal>Proyectos que hablan por mí</h2>
-    <p class="section-subtitle" data-reveal>Dos experiencias reales donde mi lado comunicativo marcó la diferencia</p>
-
-    <div class="bento-grid">
-      <article class="bento-card" data-reveal onclick="openModal(0)" tabindex="0" role="button" aria-label="Ver detalles de Charla de Orientación al alumnado">
-        <span class="bento-ribbon">🎤 Ponente</span>
-        <div class="bento-image-wrap">
-          <img src="assets/Charla FP.png" alt="Charla sobre Formación Profesional" class="bento-image" loading="lazy">
+    <!-- Cifras clave -->
+    <section class="stats" id="stats" aria-label="Cifras">
+      <div class="wrap stats-grid">
+        <div class="stat-item" data-reveal>
+          <span class="stat-number" data-count="3">3</span>
+          <span class="stat-label">Empresas</span>
         </div>
-        <div class="bento-body">
-          <h3>Charla de Orientación al alumnado</h3>
-          <p>Ayudo a alumnos de la ESO a encontrar su motivación y su camino laboral, compartiendo experiencia personal, consejos y recursos.</p>
-          <span class="bento-link">Ver detalles →</span>
+        <div class="stat-item" data-reveal data-delay="1">
+          <span class="stat-number" data-count="2">2</span>
+          <span class="stat-label">Titulaciones</span>
         </div>
-      </article>
+        <div class="stat-item" data-reveal data-delay="2">
+          <span class="stat-number" data-count="2">2</span>
+          <span class="stat-label">Premios en emprendimiento</span>
+        </div>
+        <div class="stat-item" data-reveal data-delay="3">
+          <span class="stat-number" data-count="90" data-suffix="%">90%</span>
+          <span class="stat-label">Dominio de Office</span>
+        </div>
+      </div>
+    </section>
 
-      <article class="bento-card" data-reveal data-delay="1" onclick="openModal(1)" tabindex="0" role="button" aria-label="Ver detalles del proyecto Ágora">
-        <span class="bento-ribbon">🏆 2º Premio · Mejor Presentación</span>
-        <div class="bento-image-wrap">
-          <img src="assets/Agora.png" alt="Ágora, idea de empresa" class="bento-image" loading="lazy">
+    <!-- Sobre mí -->
+    <section id="sobre" class="section">
+      <div class="wrap about-grid">
+        <div class="section-head">
+          <p class="label" data-reveal><span class="star" aria-hidden="true">✳</span> Sobre mí</p>
+          <h2 data-reveal>Técnico, pero de los que <span class="marker">hablan</span>.</h2>
         </div>
-        <div class="bento-body">
-          <h3>Ágora, un espacio ecológico</h3>
-          <p>Idea de empresa desarrollada en una clase de emprendimiento impartida por Diverxia — 2º premio del concurso y premio a la mejor presentación.</p>
-          <span class="bento-link">Ver detalles →</span>
+        <div class="about-content">
+          <p data-reveal>
+            Estudio Transporte y Logística y ya tengo el título de Gestión Administrativa. Lo que más me interesa es cómo la tecnología cambia la cadena de suministro.
+          </p>
+          <p data-reveal>
+            Miro cada cambio tecnológico del sector con tres preguntas: ¿es más eficiente?, ¿es más sostenible?, ¿nos hace más competitivos?
+          </p>
+          <p class="about-highlight" data-reveal>
+            Combino la precisión técnica de la logística con la capacidad de contar historias y conectar con las personas — algo que he demostrado dando charlas de orientación y ganando premios de presentación pública.
+          </p>
         </div>
-      </article>
+      </div>
+    </section>
+
+    <!-- Logros y Proyectos -->
+    <section id="logros" class="section section-alt">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="label" data-reveal><span class="star" aria-hidden="true">✳</span> Logros</p>
+          <h2 data-reveal>Dos veces en el <span class="marker">escenario</span>.</h2>
+          <p class="section-subtitle" data-reveal>Dos ocasiones en las que hablar bien sirvió de algo.</p>
+        </div>
+
+        <ol class="projects">
+          <li class="project" data-reveal>
+            <span class="big-num" aria-hidden="true">01</span>
+            <figure class="paper paper-tilt-a">
+              <img src="assets/charla-fp.jpg" alt="Portada de la presentación «Orientación a la FP», con ilustraciones de estudiantes leyendo sobre libros" width="1400" height="791" loading="lazy">
+            </figure>
+            <p class="tag">✳ Ponente</p>
+            <h3>Charla de Orientación al alumnado</h3>
+            <p>Ayudo a alumnos de la ESO a encontrar su motivación y su camino laboral, compartiendo experiencia personal, consejos y recursos.</p>
+            <button type="button" class="project-open" data-project="0" aria-haspopup="dialog">
+              Ver detalles<span class="visually-hidden"> de Charla de Orientación al alumnado</span> <span aria-hidden="true">→</span>
+            </button>
+          </li>
+
+          <li class="project" data-reveal data-delay="1">
+            <span class="big-num" aria-hidden="true">02</span>
+            <figure class="paper paper-tilt-b">
+              <img src="assets/agora.jpg" alt="Portada del proyecto Ágora S.L., supermercado ecológico, con ilustraciones de personas comprando productos frescos" width="1400" height="784" loading="lazy">
+            </figure>
+            <p class="tag">✳ 2º premio + mejor presentación</p>
+            <h3>Ágora, un espacio ecológico</h3>
+            <p>Idea de empresa desarrollada en una clase de emprendimiento impartida por Diverxia — 2º premio del concurso y premio a la mejor presentación.</p>
+            <button type="button" class="project-open" data-project="1" aria-haspopup="dialog">
+              Ver detalles<span class="visually-hidden"> del proyecto Ágora</span> <span aria-hidden="true">→</span>
+            </button>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Formación -->
+    <section id="formacion" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="label" data-reveal><span class="star" aria-hidden="true">✳</span> Formación</p>
+          <h2 data-reveal>Dos títulos. El segundo, <span class="marker">en curso</span>.</h2>
+        </div>
+
+        <ol class="numbered">
+          <li class="numbered-item" data-reveal>
+            <span class="big-num" aria-hidden="true">01</span>
+            <div>
+              <p class="meta">2023 - 2025</p>
+              <h3>Grado Medio en Gestión Administrativa</h3>
+              <p class="center-name">Centro: María Inmaculada</p>
+            </div>
+          </li>
+          <li class="numbered-item" data-reveal data-delay="1">
+            <span class="big-num" aria-hidden="true">02</span>
+            <div>
+              <p class="meta">2025 - 2027 <span class="tag tag-inline">En curso</span></p>
+              <h3>Grado Superior en Transporte y Logística</h3>
+              <p class="center-name">Centro: El Tablero</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="capacities">
+          <p class="label" data-reveal>→ Capacidades adquiridas</p>
+          <h3 class="capacities-title" data-reveal>Lo que me llevo de clase</h3>
+          <ol class="cap-list">
+            <li data-reveal>
+              <span class="cap-num" aria-hidden="true">01</span>
+              <h4>Dashboard Operacional</h4>
+              <p>Capacidad para gestionar un sistema de monitoreo en tiempo real de flotas con visualización de KPIs, consumo de combustible y cumplimiento de rutas.</p>
+            </li>
+            <li data-reveal data-delay="1">
+              <span class="cap-num" aria-hidden="true">02</span>
+              <h4>Optimización de Rutas</h4>
+              <p>Planificación de rutas de larga distancia y confección de rutas de reparto seleccionando la mejor combinación posible de modos de transporte.</p>
+            </li>
+            <li data-reveal>
+              <span class="cap-num" aria-hidden="true">03</span>
+              <h4>Sistema de Trazabilidad</h4>
+              <p>Habilidades para el seguimiento de carga con historiales de temperatura, ubicación y eventos críticos durante el transporte.</p>
+            </li>
+            <li data-reveal data-delay="1">
+              <span class="cap-num" aria-hidden="true">04</span>
+              <h4>Análisis Predictivo</h4>
+              <p>Habilidades para predecir demandas, mantenimiento preventivo y optimizar inventarios.</p>
+            </li>
+            <li data-reveal>
+              <span class="cap-num" aria-hidden="true">05</span>
+              <h4>Integración ERP</h4>
+              <p>Conocimientos en sistemas logísticos con SAP y plataformas TMS para sincronización de datos en tiempo real.</p>
+            </li>
+            <li data-reveal data-delay="1">
+              <span class="cap-num" aria-hidden="true">06</span>
+              <h4>Automatización de Procesos</h4>
+              <p>Control de RPA y workflows automáticos para documentación, facturación y reportes que eliminan procesos manuales.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiencia -->
+    <section id="experiencia" class="section section-alt">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="label" data-reveal><span class="star" aria-hidden="true">✳</span> Experiencia</p>
+          <h2 data-reveal>De la oficina al <span class="marker">muelle</span>.</h2>
+        </div>
+
+        <ol class="exp-list">
+          <li class="exp-item" data-reveal>
+            <span class="big-num" aria-hidden="true">01</span>
+            <a href="https://formarium.es/" target="_blank" rel="noopener" class="card exp-card">
+              <div class="exp-top">
+                <div class="exp-logo"><img src="assets/Formarium logo.png" alt="Formarium logo" width="385" height="96" loading="lazy"></div>
+              </div>
+              <h3>Formarium</h3>
+              <p class="meta"><span class="job-position">Auxiliar administrativo</span> · <span class="job-date">Enero 2024 - Junio 2025</span></p>
+              <p class="job-description">Responsable de la gestión administrativa de la empresa, así como de la organización y supervisión de los procesos internos, incluyendo la tramitación de matrículas y la gestión de la aplicación del centro.</p>
+              <span class="exp-link">→ formarium.es<span class="visually-hidden"> (se abre en una pestaña nueva)</span></span>
+            </a>
+          </li>
+
+          <li class="exp-item" data-reveal>
+            <span class="big-num" aria-hidden="true">02</span>
+            <a href="https://grupogeiners.com/" target="_blank" rel="noopener" class="card exp-card">
+              <div class="exp-top">
+                <div class="exp-logo"><img src="assets/Grupo Geiners.svg" alt="Grupo Geiners logo" class="logo-ink" width="151" height="33" loading="lazy"></div>
+              </div>
+              <h3>Grupo Geiners</h3>
+              <p class="meta"><span class="job-position">Auxiliar administrativo</span> · <span class="job-date">Julio 2025 - Agosto 2025</span></p>
+              <p class="job-description">Encargado de la digitalización y adaptación de los procesos administrativos internos de la empresa mediante la implantación de una aplicación de gestión profesional (ERP).</p>
+              <span class="exp-link">→ grupogeiners.com<span class="visually-hidden"> (se abre en una pestaña nueva)</span></span>
+            </a>
+          </li>
+
+          <li class="exp-item" data-reveal>
+            <span class="big-num" aria-hidden="true">03</span>
+            <a href="https://europe.xpo.com/es/" target="_blank" rel="noopener" class="card exp-card">
+              <div class="exp-top">
+                <div class="exp-logo"><img src="assets/XPO logo.png" alt="XPO Logistics logo" width="1280" height="292" loading="lazy"></div>
+                <span class="tag">Actualidad</span>
+              </div>
+              <h3>XPO Logistics</h3>
+              <p class="meta"><span class="job-position">Operador logístico</span> · <span class="job-date">Enero 2026 - Actualidad</span></p>
+              <p class="job-description">Formo parte del equipo logístico, desempeñando funciones de seguimiento de rutas, finalización de envíos, coordinación de citas de descarga y gestión del flujo de documentación diaria generada.</p>
+              <span class="exp-link">→ xpo.com<span class="visually-hidden"> (se abre en una pestaña nueva)</span></span>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="label" data-reveal><span class="star" aria-hidden="true">✳</span> Habilidades</p>
+          <h2 data-reveal>Lo que sé <span class="marker">hacer</span>.</h2>
+        </div>
+
+        <div class="skills-sheet" data-reveal>
+          <div class="skill-category">
+            <h3>Tecnología</h3>
+            <ul class="skill-list">
+              <li class="skill" style="--p: 90%"><span class="skill-name">Paquete Office</span><span class="skill-pct">90%</span><span class="skill-bar" aria-hidden="true"><span></span></span></li>
+              <li class="skill" style="--p: 70%"><span class="skill-name">ERP</span><span class="skill-pct">70%</span><span class="skill-bar" aria-hidden="true"><span></span></span></li>
+              <li class="skill" style="--p: 65%"><span class="skill-name">Programación básica</span><span class="skill-pct">65%</span><span class="skill-bar" aria-hidden="true"><span></span></span></li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Logística</h3>
+            <ul class="skill-list">
+              <li class="skill" style="--p: 65%"><span class="skill-name">Optimización de Rutas</span><span class="skill-pct">65%</span><span class="skill-bar" aria-hidden="true"><span></span></span></li>
+              <li class="skill" style="--p: 70%"><span class="skill-name">Gestión de Flotas</span><span class="skill-pct">70%</span><span class="skill-bar" aria-hidden="true"><span></span></span></li>
+              <li class="skill" style="--p: 85%"><span class="skill-name">Cadena de Suministro</span><span class="skill-pct">85%</span><span class="skill-bar" aria-hidden="true"><span></span></span></li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Con personas</h3>
+            <ul class="skill-list">
+              <li class="skill" style="--p: 85%"><span class="skill-name">Análisis de Problemas</span><span class="skill-pct">85%</span><span class="skill-bar" aria-hidden="true"><span></span></span></li>
+              <li class="skill" style="--p: 80%"><span class="skill-name">Comunicación Técnica</span><span class="skill-pct">80%</span><span class="skill-bar" aria-hidden="true"><span></span></span></li>
+              <li class="skill" style="--p: 80%"><span class="skill-name">Liderazgo de Proyectos</span><span class="skill-pct">80%</span><span class="skill-bar" aria-hidden="true"><span></span></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banda 2 -->
+    <div class="ticker-wrap ticker-wrap-alt" aria-hidden="true">
+      <div class="ticker">
+        <div class="ticker-track">
+          <div class="ticker-group">
+            <span>Escríbeme ✳ Contesto yo, no un bot ✳&nbsp;</span>
+            <span>Escríbeme ✳ Contesto yo, no un bot ✳&nbsp;</span>
+            <span>Escríbeme ✳ Contesto yo, no un bot ✳&nbsp;</span>
+            <span>Escríbeme ✳ Contesto yo, no un bot ✳&nbsp;</span>
+          </div>
+          <div class="ticker-group">
+            <span>Escríbeme ✳ Contesto yo, no un bot ✳&nbsp;</span>
+            <span>Escríbeme ✳ Contesto yo, no un bot ✳&nbsp;</span>
+            <span>Escríbeme ✳ Contesto yo, no un bot ✳&nbsp;</span>
+            <span>Escríbeme ✳ Contesto yo, no un bot ✳&nbsp;</span>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section contact-section">
+      <div class="wrap">
+        <div class="contact-card" data-reveal>
+          <p class="label"><span class="star" aria-hidden="true">✳</span> Contacto</p>
+          <h2>¿Hablamos? Se me da <span class="marker">bien</span>.</h2>
+          <p class="section-subtitle">Un correo o un mensaje en LinkedIn, lo que te sea más cómodo.</p>
+          <div class="contact-actions">
+            <a href="mailto:daniel.arenas.barrios@gmail.com" class="btn btn-primary">Escríbeme un correo</a>
+            <a href="https://www.linkedin.com/in/daniel-arenas-barrios" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a>
+          </div>
+          <p class="contact-mail">daniel.arenas.barrios@gmail.com</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- Modal de proyectos -->
-  <div id="projectModal" class="modal">
+  <dialog id="projectModal" class="modal" aria-labelledby="modalTitle">
     <div class="modal-content">
-      <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
-      <div class="modal-body">
+      <button type="button" class="modal-close" aria-label="Cerrar">✕</button>
+      <figure class="paper modal-figure">
         <img id="modalImage" src="" alt="" class="modal-image">
-        <h3 class="modal-title" id="modalTitle">Título del Proyecto</h3>
-        <p class="modal-description" id="modalDescription">Descripción del proyecto</p>
-        <div class="modal-tags" id="modalTags"></div>
-      </div>
+      </figure>
+      <h2 class="modal-title" id="modalTitle">Título del Proyecto</h2>
+      <p class="modal-description" id="modalDescription">Descripción del proyecto</p>
+      <div class="modal-tags" id="modalTags"></div>
     </div>
-  </div>
-
-  <!-- Formación -->
-  <section id="formacion" class="section">
-    <p class="section-eyebrow" data-reveal>Trayectoria académica</p>
-    <h2 data-reveal>Formación</h2>
-
-    <div class="timeline">
-      <div class="timeline-item" data-reveal>
-        <div class="timeline-connector"></div>
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>Grado Medio en Gestión Administrativa</h3>
-          <div class="center-name">Centro: María Inmaculada</div>
-          <div class="dates">2023 - 2025</div>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-reveal data-delay="1">
-        <div class="timeline-connector"></div>
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>Grado Superior en Transporte y Logística</h3>
-          <div class="center-name">Centro: El Tablero</div>
-          <div class="dates">2025 - 2027 · en curso</div>
-        </div>
-      </div>
-    </div>
-
-    <p class="section-subtitle capacities-title" data-reveal>Capacidades adquiridas</p>
-    <div class="cards-grid">
-      <div class="capacity-card" data-reveal>
-        <div class="capacity-icon">📊</div>
-        <h3>Dashboard Operacional</h3>
-        <p>Capacidad para gestionar un sistema de monitoreo en tiempo real de flotas con visualización de KPIs, consumo de combustible y cumplimiento de rutas.</p>
-      </div>
-      <div class="capacity-card" data-reveal data-delay="1">
-        <div class="capacity-icon">🗺️</div>
-        <h3>Optimización de Rutas</h3>
-        <p>Planificación de rutas de larga distancia y confección de rutas de reparto seleccionando la mejor combinación posible de modos de transporte.</p>
-      </div>
-      <div class="capacity-card" data-reveal data-delay="2">
-        <div class="capacity-icon">📦</div>
-        <h3>Sistema de Trazabilidad</h3>
-        <p>Habilidades para el seguimiento de carga con historiales de temperatura, ubicación y eventos críticos durante el transporte.</p>
-      </div>
-      <div class="capacity-card" data-reveal>
-        <div class="capacity-icon">💾</div>
-        <h3>Análisis Predictivo</h3>
-        <p>Habilidades para predecir demandas, mantenimiento preventivo y optimizar inventarios.</p>
-      </div>
-      <div class="capacity-card" data-reveal data-delay="1">
-        <div class="capacity-icon">🔗</div>
-        <h3>Integración ERP</h3>
-        <p>Conocimientos en sistemas logísticos con SAP y plataformas TMS para sincronización de datos en tiempo real.</p>
-      </div>
-      <div class="capacity-card" data-reveal data-delay="2">
-        <div class="capacity-icon">🤖</div>
-        <h3>Automatización de Procesos</h3>
-        <p>Control de RPA y workflows automáticos para documentación, facturación y reportes que eliminan procesos manuales.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experiencia -->
-  <section id="experiencia" class="section">
-    <p class="section-eyebrow" data-reveal>Recorrido profesional</p>
-    <h2 data-reveal>Experiencia</h2>
-
-    <div class="cards-grid">
-      <a href="https://formarium.es/" target="_blank" rel="noopener" class="exp-card" data-reveal>
-        <div class="exp-logo"><img src="assets/Formarium logo.png" alt="Formarium logo" loading="lazy"></div>
-        <h3>Formarium</h3>
-        <div class="job-position">Auxiliar administrativo</div>
-        <div class="job-date">Enero 2024 - Junio 2025</div>
-        <div class="job-description">Responsable de la gestión administrativa de la empresa, así como de la organización y supervisión de los procesos internos, incluyendo la tramitación de matrículas y la gestión de la aplicación del centro.</div>
-      </a>
-
-      <a href="https://grupogeiners.com/" target="_blank" rel="noopener" class="exp-card" data-reveal data-delay="1">
-        <div class="exp-logo"><img src="assets/Grupo Geiners.svg" alt="Grupo Geiners logo" loading="lazy"></div>
-        <h3>Grupo Geiners</h3>
-        <div class="job-position">Auxiliar administrativo</div>
-        <div class="job-date">Julio 2025 - Agosto 2025</div>
-        <div class="job-description">Encargado de la digitalización y adaptación de los procesos administrativos internos de la empresa mediante la implantación de una aplicación de gestión profesional (ERP).</div>
-      </a>
-
-      <a href="https://europe.xpo.com/es/" target="_blank" rel="noopener" class="exp-card" data-reveal data-delay="2">
-        <span class="exp-current">Actualidad</span>
-        <div class="exp-logo"><img src="assets/XPO logo.png" alt="XPO Logistics logo" loading="lazy"></div>
-        <h3>XPO Logistics</h3>
-        <div class="job-position">Operador logístico</div>
-        <div class="job-date">Enero 2026 - Actualidad</div>
-        <div class="job-description">Formo parte del equipo logístico, desempeñando funciones de seguimiento de rutas, finalización de envíos, coordinación de citas de descarga y gestión del flujo de documentación diaria generada.</div>
-      </a>
-    </div>
-
-    <div class="logo-marquee" aria-hidden="true">
-      <div class="logo-marquee-track">
-        <img src="assets/Formarium logo.png" alt="">
-        <img src="assets/Grupo Geiners.svg" alt="">
-        <img src="assets/XPO logo.png" alt="">
-        <img src="assets/Formarium logo.png" alt="">
-        <img src="assets/Grupo Geiners.svg" alt="">
-        <img src="assets/XPO logo.png" alt="">
-      </div>
-    </div>
-  </section>
-
-  <!-- Habilidades -->
-  <section id="habilidades" class="section">
-    <p class="section-eyebrow" data-reveal>Lo que domino</p>
-    <h2 data-reveal>Habilidades</h2>
-
-    <div class="skills-container">
-      <div class="skill-category" data-reveal>
-        <h3>Tecnología</h3>
-        <div class="skill-ring-row">
-          <div class="skill-ring-item">
-            <div class="skill-ring" data-percent="90">
-              <svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fill" cx="60" cy="60" r="52"/></svg>
-              <span class="ring-percent">0%</span>
-            </div>
-            <p class="skill-name">Paquete Office</p>
-          </div>
-          <div class="skill-ring-item">
-            <div class="skill-ring" data-percent="70">
-              <svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fill" cx="60" cy="60" r="52"/></svg>
-              <span class="ring-percent">0%</span>
-            </div>
-            <p class="skill-name">ERP</p>
-          </div>
-          <div class="skill-ring-item">
-            <div class="skill-ring" data-percent="65">
-              <svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fill" cx="60" cy="60" r="52"/></svg>
-              <span class="ring-percent">0%</span>
-            </div>
-            <p class="skill-name">Programación básica</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="skill-category" data-reveal data-delay="1">
-        <h3>Logística</h3>
-        <div class="skill-ring-row">
-          <div class="skill-ring-item">
-            <div class="skill-ring" data-percent="65">
-              <svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fill" cx="60" cy="60" r="52"/></svg>
-              <span class="ring-percent">0%</span>
-            </div>
-            <p class="skill-name">Optimización de Rutas</p>
-          </div>
-          <div class="skill-ring-item">
-            <div class="skill-ring" data-percent="70">
-              <svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fill" cx="60" cy="60" r="52"/></svg>
-              <span class="ring-percent">0%</span>
-            </div>
-            <p class="skill-name">Gestión de Flotas</p>
-          </div>
-          <div class="skill-ring-item">
-            <div class="skill-ring" data-percent="85">
-              <svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fill" cx="60" cy="60" r="52"/></svg>
-              <span class="ring-percent">0%</span>
-            </div>
-            <p class="skill-name">Cadena de Suministro</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="skill-category" data-reveal data-delay="2">
-        <h3>Soft Skills</h3>
-        <div class="skill-ring-row">
-          <div class="skill-ring-item">
-            <div class="skill-ring" data-percent="85">
-              <svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fill" cx="60" cy="60" r="52"/></svg>
-              <span class="ring-percent">0%</span>
-            </div>
-            <p class="skill-name">Análisis de Problemas</p>
-          </div>
-          <div class="skill-ring-item">
-            <div class="skill-ring" data-percent="80">
-              <svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fill" cx="60" cy="60" r="52"/></svg>
-              <span class="ring-percent">0%</span>
-            </div>
-            <p class="skill-name">Comunicación Técnica</p>
-          </div>
-          <div class="skill-ring-item">
-            <div class="skill-ring" data-percent="80">
-              <svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fill" cx="60" cy="60" r="52"/></svg>
-              <span class="ring-percent">0%</span>
-            </div>
-            <p class="skill-name">Liderazgo de Proyectos</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contacto -->
-  <section id="contacto" class="section contact-section">
-    <p class="section-eyebrow" data-reveal>Hablemos</p>
-    <h2 data-reveal>¿Buscas a alguien profesional y con ganas de aprender?</h2>
-    <p class="section-subtitle" data-reveal>Contáctame, estaré encantado de hablar contigo.</p>
-    <div class="contact-actions" data-reveal>
-      <a href="mailto:daniel.arenas.barrios@gmail.com" class="btn btn-primary magnetic">Enviar correo</a>
-      <a href="https://www.linkedin.com/in/daniel-arenas-barrios" target="_blank" rel="noopener" class="btn btn-ghost magnetic">LinkedIn</a>
-    </div>
-  </section>
+  </dialog>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 Daniel Arenas Barrios · Logística y Administración.</p>
-    <p>Optimizando la cadena de suministro, una idea bien comunicada a la vez.</p>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <p>&copy; 2026 Daniel Arenas Barrios · Logística y Administración.</p>
+        <p class="footer-sign">Recibido y conforme. Gracias por leer hasta aquí.</p>
+      </div>
+      <a href="#home" class="footer-top">Volver arriba <span aria-hidden="true">↑</span></a>
+    </div>
   </footer>
 
   <script src="script.js" defer></script>
